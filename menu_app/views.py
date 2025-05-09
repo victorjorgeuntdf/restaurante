@@ -1,7 +1,15 @@
-from django.shortcuts import render
+from django.views.generic import ListView
 from .models import Menu
 
-def menu_view(request):
-    # Obtener todos los ítems del menú
-    menu_items = Menu.objects.all()
-    return render(request, 'menu_app/menu.html', {'menu_items': menu_items})
+
+class MenuListView(ListView):
+    model = Menu
+    template_name = "menu_app/menu.html"
+    context_object_name = "menu_items"
+
+    def get_queryset(self):
+        return Menu.objects.all().order_by("categoria")
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context
