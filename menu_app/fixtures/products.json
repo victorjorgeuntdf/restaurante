@@ -1,0 +1,36 @@
+[
+    {
+      "model": "menu_app.product",
+      "pk": 1,
+      "fields": {
+        "name": "Pizza Margherita",
+        "description": "Pizza clásica con tomate, mozzarella y albahaca.",
+        "price": 500.00,
+        "quantity": 5,
+        "image": "/static/images/pizza_margherita.jpg"
+      }
+    },
+    {
+      "model": "menu_app.product",
+      "pk": 2,
+      "fields": {
+        "name": "Ensalada César",
+        "description": "Ensalada fresca con pollo, lechuga, croutones y aderezo César.",
+        "price": 350.00,
+        "quantity": 10,
+        "image": "/static/images/ensalada_cesar.jpg"
+      }
+    },
+    {
+      "model": "menu_app.product",
+      "pk": 3,
+      "fields": {
+        "name": "Hamburguesa Clásica",
+        "description": "Hamburguesa con carne de res, lechuga, tomate y mayonesa.",
+        "price": 450.00,
+        "quantity": 1,
+        "image": "/static/images/hamburguesa.jpg"
+      }
+    }
+  ]
+  

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container my-5">
+    <h1 class="text-center mb-4">Menú del Restaurante</h1>
+    <div class="row">
+        {% for item in menu_items %}
+            <div class="col-md-4 mb-4">
+                <a href="{% url 'product_detail' item.id %}" class="text-decoration-none text-dark">
+                    <div class="card">
+                        <img src="{{ item.image.url }}" class="card-img-top" alt="{{ item.name }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ item.name }}</h5>
+                            <p class="card-text">{{ item.description }}</p>
+                            <span class="card-text"><strong>${{ item.price }}</strong></span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% empty %}
+                <div class="col-md-4 mb-4">
+                    <h5 colspan="4" class="text-center">No hay productos disponibles</h5>
+                </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
