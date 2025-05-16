@@ -1,14 +1,11 @@
-
 from django.contrib import admin
-from .models import Menu, Pedido, ItemPedido
+from .models import Product
 
-admin.site.register(Pedido)
-admin.site.register(ItemPedido)
 
 class MenuAdmin(admin.ModelAdmin):
-    list_display = ('nombre', 'categoria', 'precio', 'disponible')
-    search_fields = ('nombre', 'categoria')
-    list_filter = ('categoria', 'disponible')
+    list_display = ("name", "description", "price", "quantity")
+    search_fields = ("name", "price")
+    list_filter = ("price", "quantity")
 
-admin.site.register(Menu, MenuAdmin)
 
+admin.site.register(Product, MenuAdmin)

@@ -1,8 +1,8 @@
 from django.urls import path
-from .views import MenuListView
+from .views import HomeView, MenuListView, ProductDetailView
 
 urlpatterns = [
-    path(
-        "", MenuListView.as_view(), name="menu"
-    ),  # Página principal para mostrar el menú
+    path("", HomeView.as_view(), name="home"),
+    path("menu/", MenuListView.as_view(), name="menu"),
+    path("menu/<int:pk>/", ProductDetailView.as_view(), name="product_detail"),
 ]

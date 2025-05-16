@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            {% if product.image %}
+                <img src="{{ product.image.url }}" alt="{{ product.name }}" class="img-fluid rounded">
+            {% else %}
+                <img src="{% static 'images/default_food.jpg' %}" alt="Sin imagen" class="img-fluid rounded">
+            {% endif %}
+        </div>
+        <div class="col-md-6">
+            <h2 class="mb-3">{{ product.name }}</h2>
+            <p>{{ product.description }}</p>
+            <h4 class="text-primary">${{ product.price }}</h4>
+
+            {% if product.quantity > 0 %}
+                <span class="badge bg-success">Disponible</span>
+            {% else %}
+                <span class="badge bg-secondary">No disponible</span>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
