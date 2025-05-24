@@ -1,4 +1,4 @@
-# restaurante
+# Restaurante X
 Aplicación web para gestionar el menú, pedidos y órdenes de un restaurant
 
 ## Crear entorno virtual
@@ -32,7 +32,7 @@ python manage.py makemigrations
 python manage.py migrate 
 ```
 
-## Llenar base de datos con fixture
+## Llenar base de datos con productos
 ```bash
 python manage.py loaddata products.json
 ```
