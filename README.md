@@ -1,22 +1,43 @@
 # restaurante
 Aplicación web para gestionar el menú, pedidos y órdenes de un restaurant
 
-## Aplicar entorno virtual
-python -m venv env
+## Crear entorno virtual
+```bash
+python -m venv venv
+```
 
 ## Activar entorno virtual
-- Linux/Mac: source env/bin/activate
-- Windows: source env/Scripts/activate
-- Windows (alternativa): ./env/Scripts.activate
+
+- Linux/Mac: 
+```bash
+source venv/bin/activate
+```
+- Windows: 
+```bash
+source venv/Scripts/activate
+```
+- Windows (alternativa): 
+```bash
+./venv/Scripts/activate
+```
 
 ## Instalar dependencias
-pip install -r requirements
+```bash
+pip install -r requirements.txt
+```
 
 ## Hacer migraciones
-python manage.py migrate
+```bash
+python manage.py makemigrations
+python manage.py migrate 
+```
 
 ## Llenar base de datos con fixture
+```bash
 python manage.py loaddata products.json
+```
 
 ## Correr app
+```bash
 python manage.py runserver
+```
